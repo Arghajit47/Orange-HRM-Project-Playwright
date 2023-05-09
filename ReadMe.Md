@@ -12,3 +12,22 @@
 `  },`
 
 ### To run the testFile : `npx playwright test ./tests/yocoboard/login.spec.ts --project=chromium --headed --workers 1`
+
+### To Install Allure-Reports:
+
+1. `wget https://github.com/allure-framework/allure2/releases/download/2.18.1/allure_2.18.1-1_all.deb`
+2. `sudo dpkg -i allure_2.18.1-1_all.deb`
+3. `npm i -D @playwright/test allure-playwright`
+4. Either add allure-playwright into playwright.config.ts:
+
+   {
+   reporter: "allure-playwright";
+   }
+   Or pass the same value via config file:
+
+   {
+   reporter: [["line"], ["allure-playwright"]];
+   }
+
+5. Generate Allure Report: `allure generate allure-results -o allure-report --clean`
+6. Open Allure Reports: `allure open allure-report`

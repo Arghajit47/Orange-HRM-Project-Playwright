@@ -3,5 +3,5 @@ node_modules/
 /playwright-report/
 /playwright/.cache/
 allure-results
-tests/OrangeHRMTest
-Robot/OrangeHRMPages
+allure-report
+allure_2.18.1-1_all.deb
