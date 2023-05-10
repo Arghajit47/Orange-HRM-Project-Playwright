@@ -97,6 +97,11 @@ export class BaseEyes {
     await expect(domIndex).toContainText(text);
   }
 
+  async seesDomWithIndex(dom: string, index: number) {
+    const domIndex = await this.page.locator(dom).nth(index);
+    await expect(domIndex).toBeVisible();
+  }
+
   // async seesAlertTextWithId(id:string,text:string){
   //   this.page.on("dialog",async alert=>{
   //     const alertMessage=alert.message();
