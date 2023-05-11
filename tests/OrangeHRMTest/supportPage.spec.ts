@@ -10,8 +10,8 @@ import {
 } from "../../Robot/OrangeHRMPages/supportRobot";
 import { test } from "../../fixturesD/myFixtures";
 export default function createTests() {
-  test.describe("About Page Testing", async () => {
-    test("001-Visit About Page and check for elements", async ({
+  test.describe("Support Page Testing", async () => {
+    test("001-Visit Support Page and check for elements", async ({
       browser,
       ValidUserName,
       ValidPassword,
