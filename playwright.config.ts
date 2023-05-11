@@ -11,6 +11,7 @@ import { defineConfig, devices } from "@playwright/test";
  */
 export default defineConfig({
   timeout: 50 * 1000,
+  // testDir: "./tests",
   expect: {
     /* Maximum time expect() should wait for the condition to be met.
     For example in await expect(locator).toHaveText(); */
