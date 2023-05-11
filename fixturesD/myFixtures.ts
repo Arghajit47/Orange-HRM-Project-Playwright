@@ -22,6 +22,8 @@ type myfixtureType = {
   pimUrl: string;
   addEmployeeUrl: string;
   aboutApi: string;
+  supportApi: string;
+  supportUrl: string;
 };
 
 const fixture = baseTest.extend<myfixtureType>({
@@ -47,6 +49,10 @@ const fixture = baseTest.extend<myfixtureType>({
     "https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee",
   aboutApi:
     "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/core/about",
+  supportApi:
+    "https://opensource-demo.orangehrmlive.com/web/index.php/help/support",
+  supportUrl:
+    "https://opensource-demo.orangehrmlive.com/web/index.php/help/support",
 });
 // This fixture is the actual "test" from playwright test (line number 2)
 export const test = fixture;
