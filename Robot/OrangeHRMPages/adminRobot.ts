@@ -48,8 +48,13 @@ export class AdminRobotEyes extends BaseEyes {
           'div[class="oxd-table-cell-actions"] > button[type="button"] > i[class="oxd-icon bi-pencil-fill"]',
           i
         );
+        await super.seesDomContainTextWithIndex(
+          "div > span",
+          `(${count}) Records Found`,
+          1
+        );
       }
-    } else {
+    } else if (count > 50) {
       for (var i = 0; i < 50; i++) {
         await super.seesDomWithIndex(
           'div[role="rowgroup"] > div[class="oxd-table-card"]',
@@ -64,13 +69,19 @@ export class AdminRobotEyes extends BaseEyes {
           i
         );
         await super.seesDomVisible('nav[aria-label="Pagination Navigation"]');
+        await super.seesDomContainTextWithIndex(
+          "div > span",
+          `(${count}) Records Found`,
+          1
+        );
       }
+    } else {
+      await super.seesDomContainTextWithIndex(
+        "div > span",
+        `No Records Found`,
+        1
+      );
     }
-    await super.seesDomContainTextWithIndex(
-      "div > span",
-      `(${count}) Records Found`,
-      1
-    );
   }
   async seesSaveUserUrl(saveUsersUrl: string) {
     await super.seesUrl(saveUsersUrl);

@@ -16,8 +16,11 @@ type myfixtureType = {
   InvalidUserName: string;
   InvalidPassword: string;
   userApi: string;
+  pimApi: string;
   adminUrl: string;
   saveUserUrl: string;
+  pimUrl: string;
+  addEmployeeUrl: string;
 };
 
 const fixture = baseTest.extend<myfixtureType>({
@@ -29,12 +32,18 @@ const fixture = baseTest.extend<myfixtureType>({
   ValidUserName: "Admin",
   InvalidUserName: "admin",
   InvalidPassword: "admin",
+  pimApi:
+    "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/pim/employees",
   userApi:
     "https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/admin/users",
   adminUrl:
     "https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers",
   saveUserUrl:
     "https://opensource-demo.orangehrmlive.com/web/index.php/admin/saveSystemUser",
+  pimUrl:
+    "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewEmployeeList",
+  addEmployeeUrl:
+    "https://opensource-demo.orangehrmlive.com/web/index.php/pim/addEmployee",
 });
 // This fixture is the actual "test" from playwright test (line number 2)
 export const test = fixture;
