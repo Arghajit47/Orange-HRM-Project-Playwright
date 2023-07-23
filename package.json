@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf allure-results && rimraf allure-reports && rimraf test-results",
+    "clean": "rimraf allure-results && rimraf allure-report && rimraf test-results && rimraf playwright-report",
     "test": "playwright test --headed",
     "test:headless": "playwright test",
     "test:reporter": "npm run clean && playwright test --headed --reporter=allure-playwright && allure-report",
-    "allure-report": "npx allure generate --clean allure-results && npx allure open"
+    "allure-report": "npx allure generate --clean allure-results && npx allure open",
+    "playwright": "playwright test test.list.ts --project=chromium --headed --workers 1"
   },
   "keywords": [],
   "author": "",

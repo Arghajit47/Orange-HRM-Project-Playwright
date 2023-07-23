@@ -21,7 +21,7 @@ export class LoginRobotEyes extends BaseEyes {
       "Forgot your password?",
       2
     );
-    await super.seesDomContainTextWithIndex("div > p", "OrangeHRM OS 5.4", 3);
+    await super.seesDomContainTextWithIndex("div > p", "OrangeHRM OS 5.5", 3);
   }
 
   async validateInvalidCredentialsText() {
