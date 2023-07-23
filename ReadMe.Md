@@ -11,7 +11,7 @@
 `    timeout: 20000,`
 `  },`
 
-### To run the testFile : `npx playwright test ./tests/yocoboard/login.spec.ts --project=chromium --headed --workers 1`
+### To run the testFile : `npx playwright test test.list.ts --project=chromium --headed --workers 1`
 
 ### To Install Allure-Reports:
 

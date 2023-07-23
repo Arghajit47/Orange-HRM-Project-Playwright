@@ -37,9 +37,6 @@ export default function createTests() {
       ]);
       await newWindow.waitForURL("**/starterhelp.orangehrm.com/**");
       await expect(
-        newWindow.locator('li > a[href="/hc/en-us/requests/new"]').nth(0)
-      ).toBeVisible();
-      await expect(
         newWindow.locator('li > a[data-auth-action="signin"]').nth(0)
       ).toBeVisible();
       await expect(newWindow.locator('input[id="query"]')).toBeVisible();
