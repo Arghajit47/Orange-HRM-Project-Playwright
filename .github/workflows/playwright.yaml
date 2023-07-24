@@ -3,11 +3,11 @@ name: Playwright Testing
 on:
   push:
     branches:
-      - main
+      - OrangeHRM
   pull_request:
     types: [opened, closed]
     branches:
-      - main
+      - OrangeHRM
 
 jobs:
   build-and-test:
