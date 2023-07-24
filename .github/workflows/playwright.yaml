@@ -29,8 +29,8 @@ jobs:
 #       - name: Compile TypeScript
 #         run: npx tsc
 
-#       - name: Install Playwright dependencies
-#         run: npx playwright install-deps
+      - name: Install Playwright dependencies
+        run: npx playwright install-deps
 
       - name: Run tests
         run: npm run playwright
