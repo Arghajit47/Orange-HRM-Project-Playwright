@@ -9,7 +9,7 @@
     "test:headless": "playwright test",
     "test:reporter": "npm run clean && playwright test --headed --reporter=allure-playwright && allure-report",
     "allure-report": "npx allure generate --clean allure-results && npx allure open",
-    "playwright": "playwright test test.list.ts --project=chromium --headed --workers 1"
+    "playwright": "playwright test test.list.ts --project=chromium --workers 1"
   },
   "keywords": [],
   "author": "",
