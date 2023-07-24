@@ -5,7 +5,7 @@ on:
     branches:
       - OrangeHRM
   pull_request:
-    types: [opened, closed]
+    types: [opened, synchronized, closed]
     branches:
       - OrangeHRM
 
@@ -26,11 +26,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Compile TypeScript
-        run: npx tsc
+#       - name: Compile TypeScript
+#         run: npx tsc
 
-      - name: Install Playwright dependencies
-        run: npx playwright install-deps
+#       - name: Install Playwright dependencies
+#         run: npx playwright install-deps
 
       - name: Run tests
         run: npm run playwright
