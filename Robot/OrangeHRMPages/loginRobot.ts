@@ -6,6 +6,7 @@ export class LoginRobotEyes extends BaseEyes {
     super(page);
   }
   async seesLoginPageElements() {
+    await this.page.waitForLoadState("networkidle");
     await super.seesDomVisible('input[name="username"]');
     await super.seesDomVisible('input[name="password"]');
     await super.seesDomEnabled('button[type="submit"]');
@@ -25,9 +26,11 @@ export class LoginRobotEyes extends BaseEyes {
   }
 
   async validateInvalidCredentialsText() {
+    await this.page.waitForLoadState("networkidle");
     await super.seesDomContainTextWithIndex("div > p", "Invalid credential", 0);
   }
   async validateForgotPasswordPage() {
+    await this.page.waitForLoadState("networkidle");
     await super.seesDomContainText("form > h6", "Reset Password");
     await super.seesDomContainText(
       "form > p",
@@ -38,6 +41,7 @@ export class LoginRobotEyes extends BaseEyes {
     await super.seesDomEnabled('button[type="submit"]');
   }
   async validateDashboardUrl() {
+    await this.page.waitForLoadState("networkidle");
     await super.seesUrl(
       "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
     );
@@ -49,6 +53,7 @@ export class LoginRobotDependencies extends BaseDependencies {
     super(page);
   }
   async visitHomePage() {
+    await this.page.waitForLoadState("networkidle");
     await super.visitUrl("https://opensource-demo.orangehrmlive.com/");
   }
 }
@@ -59,22 +64,28 @@ export class LoginRobotHands extends BaseHands {
   }
 
   async inputEmailId(email: string) {
+    await this.page.waitForLoadState("networkidle");
     await super.typeTextonDom('input[name="username"]', email);
   }
   async inputPassword(password: string) {
+    await this.page.waitForLoadState("networkidle");
     await super.typeTextonDom('input[name="password"]', password);
   }
   async clickOnLoginButton() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElement('button[type="submit"]');
   }
   async clickOnHamburgerIcon() {
+    await this.page.waitForLoadState("networkidle");
     await super.scrollIntoElement('aside[class="sidebar"]');
     await super.clickOnDomElement('em[id="hamburger_icon"]');
   }
   async clickOnSignOut() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElement('ul > li[onclick="signOut();"]');
   }
   async clickOnForgotPassword() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElementWithIndex("div > p", 2);
   }
 }
