@@ -6,14 +6,17 @@ export class PIMRobotEyes extends BaseEyes {
     super(page);
   }
   async seesPIMOption() {
+    await this.page.waitForLoadState("networkidle");
     await super.seesDomVisible(
       'li > a[href="/web/index.php/pim/viewPimModule"]'
     );
   }
   async seesPimUrl(pimUrl: string) {
+    await this.page.waitForLoadState("networkidle");
     await super.seesUrl(pimUrl);
   }
   async seesPimPageData(count: number) {
+    await this.page.waitForLoadState("networkidle");
     if (count <= 50) {
       for (var i = 0; i < count; i++) {
         await super.seesDomWithIndex(
@@ -64,6 +67,7 @@ export class PIMRobotEyes extends BaseEyes {
     }
   }
   async seesPimPageElements() {
+    await this.page.waitForLoadState("networkidle");
     await super.seesDomVisible("nav > ul > li > span");
     await super.seesDomWithIndex('li > a[href="#"]', 0);
     await super.seesDomWithIndex('li > a[href="#"]', 1);
@@ -84,9 +88,11 @@ export class PIMRobotEyes extends BaseEyes {
     );
   }
   async seesAddEmployeeUrl(addEmployeeUrl: string) {
+    await this.page.waitForLoadState("networkidle");
     await super.seesUrl(addEmployeeUrl);
   }
   async seesAddEmployeePageElements() {
+    await this.page.waitForLoadState("networkidle");
     await super.seesDomVisible('input[name="firstName"]');
     await super.seesDomVisible('input[name="lastName"]');
     await super.seesDomVisible('input[name="middleName"]');
@@ -103,6 +109,7 @@ export class PIMRobotEyes extends BaseEyes {
     await super.seesDomVisible('div > button[type="submit"]');
   }
   async seesDeleteModal() {
+    await this.page.waitForLoadState("networkidle");
     await super.seesDomContainTextWithIndex(
       'div[role="document"] > div > p',
       "Are you Sure?",
@@ -130,52 +137,64 @@ export class PIMRobotHands extends BaseHands {
     super(page);
   }
   async clickOnPIMOption() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElement(
       'li > a[href="/web/index.php/pim/viewPimModule"]'
     );
   }
   async clickOnAddPIM() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElement(
       'div[class="orangehrm-header-container"] > button[type="button"]'
     );
   }
   async typeFirstName(firstName: string) {
+    await this.page.waitForLoadState("networkidle");
     await super.typeTextonDom('div > input[name="firstName"]', firstName);
   }
   async typeMiddleName(middleName: string) {
+    await this.page.waitForLoadState("networkidle");
     await super.typeTextonDom('div > input[name="middleName"]', middleName);
   }
   async typeLastName(lastName: string) {
+    await this.page.waitForLoadState("networkidle");
     await super.typeTextonDom('div > input[name="lastName"]', lastName);
   }
   async clickOnSaveButton() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElement('div > button[type="submit"]');
   }
   async clickOnCreateLoginDetailsCheckbox() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElement('div[class="oxd-switch-wrapper"]');
   }
   async clickOnEmployeeListOption() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElementWithIndex('li > a[href="#"]', 0);
   }
   async clickOnDeleteIcon() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElementWithIndex(
       'div[class="oxd-table-cell-actions"] > button[type="button"] > i[class="oxd-icon bi-trash"]',
       0
     );
   }
   async clickOnDeleteButton() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElementWithIndex(
       'div[role="document"] > div > button[type="button"]',
       1
     );
   }
   async typeEmployeeName(text: string) {
+    await this.page.waitForLoadState("networkidle");
     await this.page
       .locator('input[placeholder="Type for hints..."]')
       .nth(0)
       .fill(text);
   }
   async clickOnSearchButton() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElement('div > button[type="submit"]');
   }
 }

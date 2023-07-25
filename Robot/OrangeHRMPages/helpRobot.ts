@@ -6,6 +6,7 @@ export class HelpRobotEyes extends BaseEyes {
     super(page);
   }
   async seesHelpButton() {
+    await this.page.waitForLoadState("networkidle");
     await super.seesDomVisible('button[title="Help"]');
   }
 }
@@ -14,6 +15,7 @@ export class HelpRobotHands extends BaseHands {
     super(page);
   }
   async clickOnHelpButton() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElement('button[title="Help"]');
   }
 }

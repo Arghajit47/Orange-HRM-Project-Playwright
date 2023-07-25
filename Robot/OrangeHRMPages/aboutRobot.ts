@@ -6,11 +6,13 @@ export class AboutRobotEyes extends BaseEyes {
     super(page);
   }
   async seesUserDropDown() {
+    await this.page.waitForLoadState("networkidle");
     await super.seesDomVisible(
       'span > i[class="oxd-icon bi-caret-down-fill oxd-userdropdown-icon"]'
     );
   }
   async seesOptionsInUserDropDown() {
+    await this.page.waitForLoadState("networkidle");
     for (var i = 0; i < 4; i++) {
       await super.seesDomWithIndex('ul > li > a[role="menuitem"]', i);
     }
@@ -21,6 +23,7 @@ export class AboutRobotEyes extends BaseEyes {
     activeEmp: string,
     terminatedEmp: string
   ) {
+    await this.page.waitForLoadState("networkidle");
     await super.seesDomContainText("div > h6", "About");
     for (var i = 0; i < 4; i++) {
       await super.seesDomWithIndex(
@@ -58,11 +61,13 @@ export class AboutRobotHands extends BaseHands {
     super(page);
   }
   async clickOnUserDropDown() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElement(
       'span > i[class="oxd-icon bi-caret-down-fill oxd-userdropdown-icon"]'
     );
   }
   async clickOnAboutOption() {
+    await this.page.waitForLoadState("networkidle");
     await super.clickOnDomElementWithIndex('ul > li > a[role="menuitem"]', 0);
   }
 }
