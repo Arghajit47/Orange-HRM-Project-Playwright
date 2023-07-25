@@ -1,6 +1,6 @@
 ### `fixturesD/myFixtures.ts` folder contains all the variable values like emailId, password and etc.
 
-### `Robot/BaseRobot.ts` is the Robot file developed for the Playwright, extending which we created for example `Robot/pages/LoginPageRobot.ts` to use them in different testFiles, such as; `Robot/pages/LoginPageRobot.ts` is used for `tests/yocoboard/login.spec.ts`.
+### `Robot/BaseRobot.ts` is the Robot file developed for the Playwright, extending which we created for example `Robot/pages/LoginPageRobot.ts` to use them in different testFiles, such as; `Robot/pages/LoginPageRobot.ts` is used for `tests/*/*.spec.ts`.
 
 ### In playwright.config.ts file we have mentioned the actionTimeout and expectTimeout;
 
