@@ -3,5 +3,6 @@ node_modules/
 /playwright-report/
 /playwright/.cache/
 allure-results
-
 allure-report
+package-lock.json
+.idea

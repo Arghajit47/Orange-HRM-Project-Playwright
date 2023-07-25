@@ -1,43 +1,32 @@
-name: Playwright Testing
+name: Playwright Test
 
-on:
-  push:
-    branches:
-      - OrangeHRM
-  pull_request:
-    types: [opened, synchronized, closed]
-    branches:
-      - OrangeHRM
+on: [push, pull_request]
 
 jobs:
-  build-and-test:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
-          cache: "npm"
+          node-version: 16
 
       - name: Install dependencies
         run: npm install
-
-#       - name: Compile TypeScript
-#         run: npx tsc
 
       - name: Install Playwright dependencies
         run: npx playwright install-deps
 
       - name: Run tests
-        run: npm run playwright
+        run: npx playwright test test.list.ts --project=chromium --workers 1
 
       - name: Archive test results
         uses: actions/upload-artifact@v2
         with:
-          name: OrangeHRM-test-result
+          name: Playwright-test-result
           path: |
             playwright-report
